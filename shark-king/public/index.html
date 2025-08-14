@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shark King — Cybersecurity Portfolio</title>
+	<meta name="description" content="Shark King — Cybersecurity portfolio showcasing resume, projects, contact, and secure authentication." />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='160'>🦈</text></svg>">
+</head>
+<body>
+	<div class="rgb-bg"></div>
+	<header class="top-nav">
+		<div class="brand">
+			<span class="logo">🦈</span>
+			<span class="brand-text">Shark King</span>
+		</div>
+		<nav>
+			<ul class="nav-list">
+				<li><a href="#home" data-section="home" class="nav-link active">Home</a></li>
+				<li><a href="#resume" data-section="resume" class="nav-link">Resume</a></li>
+				<li><a href="#projects" data-section="projects" class="nav-link">Projects</a></li>
+				<li><a href="#contact" data-section="contact" class="nav-link">Contact</a></li>
+				<li><a href="#login" data-section="login" class="nav-link">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="content">
+		<section id="home" class="section visible">
+			<div class="hero">
+				<h1 class="glow">Welcome to <span class="accent">Shark King</span></h1>
+				<p class="typewriter" id="intro-typed" aria-live="polite"></p>
+				<div class="cta-row">
+					<a class="btn btn-primary" href="#projects" data-section="projects">Explore Projects</a>
+					<a class="btn btn-ghost" href="#contact" data-section="contact">Get in Touch</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="resume" class="section">
+			<div class="container">
+				<h2 class="section-title">Resume</h2>
+				<div id="resume-card" class="resume-card">
+					<div class="resume-grid">
+						<div>
+							<h3>Shark King</h3>
+							<p>Cybersecurity Specialist — Offensive Security | Blue Team | Threat Hunting</p>
+							<ul class="tags">
+								<li>Penetration Testing</li>
+								<li>Incident Response</li>
+								<li>Malware Analysis</li>
+								<li>Cloud Security</li>
+								<li>DevSecOps</li>
+							</ul>
+						</div>
+						<div>
+							<h4>Experience</h4>
+							<ul class="timeline">
+								<li>
+									<span class="role">Senior Security Engineer</span>
+									<span class="org">CyberFin Labs</span>
+									<span class="time">2022 — Present</span>
+									<p>Led red team engagements, built purple team playbooks, automated cloud misconfig detection.</p>
+								</li>
+								<li>
+									<span class="role">Security Analyst</span>
+									<span class="org">Neon Shield</span>
+									<span class="time">2019 — 2022</span>
+									<p>Threat hunting, SIEM engineering, phishing defense, and SOC automation with SOAR.</p>
+								</li>
+							</ul>
+							<h4>Certifications</h4>
+							<p>OSCP, CISSP, CEH, AZ-500</p>
+						</div>
+					</div>
+				</div>
+				<div class="actions">
+					<button id="download-resume" class="btn btn-primary">Download PDF</button>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="section">
+			<div class="container">
+				<h2 class="section-title">Projects</h2>
+				<div id="projects-grid" class="projects-grid" aria-live="polite">
+					<!-- Cards rendered by JS -->
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="section">
+			<div class="container">
+				<h2 class="section-title">Contact</h2>
+				<form id="contact-form" class="contact-form" autocomplete="on">
+					<div class="field">
+						<label for="cf-name">Name</label>
+						<input id="cf-name" type="text" name="name" placeholder="Your name" required />
+					</div>
+					<div class="field">
+						<label for="cf-email">Email</label>
+						<input id="cf-email" type="email" name="email" placeholder="you@example.com" required />
+					</div>
+					<div class="field">
+						<label for="cf-message">Message</label>
+						<textarea id="cf-message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+					</div>
+					<div class="actions">
+						<button type="submit" class="btn btn-primary">Send Message</button>
+						<span id="contact-status" class="status"></span>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<section id="login" class="section">
+			<div class="container login-container">
+				<div id="login-box" class="login-box">
+					<h2 class="login-title">Secure Login</h2>
+					<div class="tabs">
+						<button class="tab-btn active" data-tab="cred">Username / Password</button>
+						<button class="tab-btn" data-tab="phone">Phone OTP</button>
+						<button class="tab-btn" data-tab="social">Social</button>
+					</div>
+
+					<div class="tab-content active" id="tab-cred">
+						<div class="field">
+							<label for="login-email">Email</label>
+							<input id="login-email" type="email" placeholder="you@example.com" required />
+						</div>
+						<div class="field">
+							<label for="login-password">Password</label>
+							<input id="login-password" type="password" placeholder="••••••••" required />
+						</div>
+						<div class="actions">
+							<button id="btn-login" class="btn btn-primary">Login</button>
+							<button id="btn-signup" class="btn btn-ghost">Sign Up</button>
+						</div>
+						<div class="aux">
+							<a href="#" id="forgot-password" class="link">Forgot Password?</a>
+							<span id="auth-status" class="status"></span>
+						</div>
+					</div>
+
+					<div class="tab-content" id="tab-phone">
+						<div id="recaptcha-container"></div>
+						<div class="field">
+							<label for="phone-number">Phone Number</label>
+							<input id="phone-number" type="tel" placeholder="+1 555 555 1234" />
+						</div>
+						<div class="actions">
+							<button id="send-otp" class="btn btn-primary">Send OTP</button>
+						</div>
+						<div class="field">
+							<label for="otp-code">Enter OTP</label>
+							<input id="otp-code" type="text" inputmode="numeric" placeholder="123456" />
+						</div>
+						<div class="actions">
+							<button id="verify-otp" class="btn btn-primary">Verify</button>
+							<span id="phone-status" class="status"></span>
+						</div>
+					</div>
+
+					<div class="tab-content" id="tab-social">
+						<div class="social-row">
+							<button id="login-google" class="btn social google">Login with Google</button>
+							<button id="login-github" class="btn social github">Login with GitHub</button>
+							<button id="login-microsoft" class="btn social microsoft">Login with Microsoft</button>
+						</div>
+						<div class="aux">
+							<span id="social-status" class="status"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<p>© <span id="year"></span> Shark King. Stay sharp. Stay secure.</p>
+	</footer>
+
+	<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-YcsIPb1N6L2tg5QC79e7SbfYj2C6uBy+PVk+oTy9M1y5j6+Fk3E1oWmJ3b8m25Kx2T8Yk0CaP9v3t4PpAz6LZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script>window.EmailJS=window.emailjs;</script>
+	<script src="./firebase-config.js" defer></script>
+	<script type="module" src="./app.js"></script>
+</body>
+</html>
