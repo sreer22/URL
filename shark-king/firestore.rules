@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+	match /databases/{database}/documents {
+		// Visitors can send contact messages without auth; messages are write-only
+		match /contactMessages/{docId} {
+			allow create: if true;
+			allow read, update, delete: if false;
+		}
+
+		// Users collection: user can read/write their own profile
+		match /users/{uid} {
+			allow read, create, update, delete: if request.auth != null && request.auth.uid == uid;
+		}
+
+		// Projects: readable by anyone, write by authenticated users
+		match /projects/{docId} {
+			allow read: if true;
+			allow create, update, delete: if request.auth != null;
+		}
+	}
+}
